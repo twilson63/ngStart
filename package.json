@@ -1,0 +1,44 @@
+{
+  "name": "start",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "^4.3.2",
+    "nano": "^5.9.1"
+  },
+  "devDependencies": {
+    "tap": "^0.4.9",
+    "nodemon": "^1.1.1",
+    "handlebars": "^1.3.0",
+    "hbsfy": "^1.3.2",
+    "atomify": "^2.2.2",
+    "jshint": "^2.5.1"
+  },
+  "scripts": {
+    "install": "bower install",
+    "start": "atomify -d",
+    "test": "tap **/*_test.js"
+  },
+  "atomify": {
+    "server": {
+      "st": {
+        "path": "./www",
+        "cache": false
+      },
+      "open": "true",
+      "path": "index.html",
+      "lr": {
+        "patterns": ["www/*.html", "www/*.js", "www/*.css"]
+      }
+    },
+    "js": {
+      "entry": "app/index.js",
+      "output": "www/bundle.js",
+      "watch": true,
+      "debug": true
+    },
+    "css": {
+      "entry": "app/index.css",
+      "output": "www/bundle.css"
+    }
+  }
+}
